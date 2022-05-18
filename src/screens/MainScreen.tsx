@@ -10,7 +10,7 @@ interface Props {}
 export const MainScreen: React.FC<Props> = () => {
   const navigation = useNavigation<MainScreenStackNavigationProp>();
   return (
-    <View style={tw`items-center justify-center flex-1`}>
+    <View style={tw`p-2 flex-1`}>
       <SearchInput
         onSubmit={query => {}}
         searchQuery={'ss'}
