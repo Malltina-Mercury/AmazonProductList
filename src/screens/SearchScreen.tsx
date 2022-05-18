@@ -1,8 +1,9 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {SearchScreenRouteProp} from '../types/navigation/search-screen-navigation';
 import {useSearchApi} from '../hooks/useSearchApi';
+import {ProductCard} from '../components/product/ProductCard';
 
 interface Props {}
 
@@ -17,11 +18,11 @@ export const SearchScreen: React.FC<Props> = () => {
         {!isLoaded ? (
           <Text>Loading</Text>
         ) : (
-          <View>
+          <ScrollView>
             {data?.products.map(product => (
-              <Text key={product.id}>{product.title}</Text>
+              <ProductCard key={product.id} product={product} />
             ))}
-          </View>
+          </ScrollView>
         )}
       </View>
     </View>
