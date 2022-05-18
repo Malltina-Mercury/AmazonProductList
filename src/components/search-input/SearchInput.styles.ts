@@ -2,7 +2,7 @@ import tw from 'twrnc';
 
 const searchInputStyles = {
   input: tw`
-    w-full 
+    flex-1
     p-2
     bg-white
     round
