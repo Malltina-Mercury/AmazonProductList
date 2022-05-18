@@ -9,12 +9,20 @@ interface Props {}
 export const SearchScreen: React.FC<Props> = () => {
   const {params} = useRoute<SearchScreenRouteProp>();
 
-  const [data] = useSearchApi({q: params.query}, [params.query]);
+  const [data, isLoaded] = useSearchApi({q: params.query}, [params.query]);
 
   return (
     <View>
       <View>
-        <Text>{JSON.stringify(data)}</Text>
+        {!isLoaded ? (
+          <Text>Loading</Text>
+        ) : (
+          <View>
+            {data?.products.map(product => (
+              <Text key={product.id}>{product.title}</Text>
+            ))}
+          </View>
+        )}
       </View>
     </View>
   );
