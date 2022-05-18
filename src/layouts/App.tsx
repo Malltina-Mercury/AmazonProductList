@@ -6,7 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import tw from 'twrnc';
 
 import {MainScreen} from '../screens/MainScreen';
-import {SearchView} from '../screens/SearchView';
+import {SearchScreen} from '../screens/SearchScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +21,7 @@ export const App: React.FC<Props> = () => {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name={'Home'} component={MainScreen} />
-            <Stack.Screen name={'Search'} component={SearchView} />
+            <Stack.Screen name={'Search'} component={SearchScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

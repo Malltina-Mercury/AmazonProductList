@@ -1,14 +1,15 @@
 import {DependencyList, useEffect, useState} from 'react';
 import request from '../helpers/api';
 import waitForMilliseconds from '../helpers/waitForMilliseconds';
-import {WaitToCrawlResponse} from '../types/api/waitToCrawlResponse';
+import {WaitToCrawlResponse} from '../types/api/waitToCrawl';
 import {AxiosResponse} from 'axios';
+import {ApiResponse} from '../types/hook/api';
 
 export const useGetRequest = <ResponseT, ParamsT = any>(
   url: string,
   params?: ParamsT,
   deps: DependencyList = [],
-) => {
+): ApiResponse<ResponseT> => {
   const [data, setData] = useState<ResponseT>();
   const [error, setError] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -40,5 +41,5 @@ export const useGetRequest = <ResponseT, ParamsT = any>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
-  return {data, error, isLoaded};
+  return [data, isLoaded, error];
 };
