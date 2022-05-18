@@ -1,4 +1,6 @@
 export type RootStackParamsList = {
   Main: undefined;
-  Search: undefined;
+  Search: {
+    query: string;
+  };
 };

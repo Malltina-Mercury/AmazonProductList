@@ -1,24 +1,36 @@
-import React, {useCallback} from 'react';
-import {View} from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {Text, TextInput, View} from 'react-native';
 import styles from './SearchBar.styles';
-import {SearchInput} from '../search-input/SearchInput';
-import {SearchButton} from '../search-button/SearchButton';
 import {useNavigation} from '@react-navigation/native';
-import {MainScreenStackNavigationProp} from '../../types/MainScreenStackNavigationProp';
+import {MainScreenNavigationProp} from '../../types/navigation/main-screen-navigation';
 
 interface Props {}
 
 export const SearchBar: React.FC<Props> = () => {
-  const navigation = useNavigation<MainScreenStackNavigationProp>();
+  const navigation = useNavigation<MainScreenNavigationProp>();
+  const [query, setQuery] = useState<string>('');
+
+  const onChangeQueryText = useCallback(
+    (queryText: string) => {
+      setQuery(queryText);
+    },
+    [setQuery],
+  );
 
   const onPressSearchHandler = useCallback(() => {
-    navigation.navigate('Search');
-  }, [navigation]);
+    navigation.navigate('Search', {query: query});
+  }, [navigation, query]);
 
   return (
     <View style={styles.bar}>
-      <SearchInput />
-      <SearchButton onPress={onPressSearchHandler} />
+      <TextInput
+        style={styles.input}
+        value={query}
+        onChangeText={onChangeQueryText}
+      />
+      <Text style={styles.button} onPress={onPressSearchHandler}>
+        Search
+      </Text>
     </View>
   );
 };
