@@ -2,7 +2,7 @@ import tw from 'twrnc';
 
 const ProductCardStyle = {
   card: tw`
-    p-2 m-2
+    p-2 m-3 mb-0
     flex-row
     bg-white
     rounded
