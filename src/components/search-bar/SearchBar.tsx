@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {TextInput, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -29,6 +29,7 @@ export const SearchBar: React.FC<Props> = () => {
         style={styles.input}
         value={query}
         onChangeText={onChangeQueryText}
+        onSubmitEditing={onPressSearchHandler}
       />
       <MaterialIcon
         name="magnify"
