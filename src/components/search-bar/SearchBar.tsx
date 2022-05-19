@@ -1,8 +1,10 @@
 import React, {useCallback, useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
-import styles from './SearchBar.styles';
 import {useNavigation} from '@react-navigation/native';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import {MainScreenNavigationProp} from '../../types/navigation/main-screen-navigation';
+import styles from './SearchBar.styles';
 
 interface Props {}
 
@@ -28,9 +30,12 @@ export const SearchBar: React.FC<Props> = () => {
         value={query}
         onChangeText={onChangeQueryText}
       />
-      <Text style={styles.button} onPress={onPressSearchHandler}>
-        Search
-      </Text>
+      <MaterialIcon
+        name="magnify"
+        size={32}
+        style={styles.button}
+        onPress={onPressSearchHandler}
+      />
     </View>
   );
 };

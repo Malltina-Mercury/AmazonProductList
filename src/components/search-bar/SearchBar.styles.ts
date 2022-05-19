@@ -14,8 +14,7 @@ const searchBarStyles = {
     p-2
   `,
   button: tw`
-    pr-5 pl-2
-    text-blue-500
+    p-3
     flex
   `,
 };
