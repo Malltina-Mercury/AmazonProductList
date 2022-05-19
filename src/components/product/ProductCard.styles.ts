@@ -11,15 +11,23 @@ const ProductCardStyle = {
     flex-1
   `,
   preview: tw`
-    w-24
+    w-36
   `,
-  title: tw``,
+  title: tw`
+    pr-2
+    mb-4
+    font-bold
+  `,
   image: tw`
-    w-24 h-24
+    w-36 h-36
+    border-gray-100 border-2
+    rounded
   `,
-  prices: tw``,
+  prices: tw`
+    flex-row
+  `,
   mainPrice: tw``,
-  dealPrice: tw``,
+  offPrice: tw``,
 };
 
 export default ProductCardStyle;

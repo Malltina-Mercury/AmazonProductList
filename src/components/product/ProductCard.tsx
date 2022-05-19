@@ -17,10 +17,10 @@ export const ProductCard: React.FC<Props> = ({product}) => {
   return (
     <View style={styles.card}>
       <View style={styles.details}>
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
         <View style={styles.prices}>
           <Text style={styles.mainPrice}>{main}</Text>
-          <Text style={styles.dealPrice}>{deal}</Text>
+          <Text style={styles.offPrice}>{deal}</Text>
         </View>
       </View>
       <View style={styles.preview}>
