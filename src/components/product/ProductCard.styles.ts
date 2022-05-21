@@ -10,9 +10,7 @@ const ProductCardStyle = {
   details: tw`
     flex-1
   `,
-  preview: tw`
-    w-36
-  `,
+  preview: tw``,
   title: tw`
     pr-2
     mb-4
@@ -23,11 +21,13 @@ const ProductCardStyle = {
     border-gray-100 border-2
     rounded
   `,
-  prices: tw`
-    flex-row
+  prices: tw``,
+  price: tw`
+    text-xs font-black
   `,
-  mainPrice: tw``,
-  offPrice: tw``,
+  offPrice: tw`
+    text-red-500
+  `,
   offBadge: tw`
     px-2 py-1
     absolute -top-3 right-1

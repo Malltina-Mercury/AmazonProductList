@@ -3,11 +3,11 @@ export interface Product {
   title: string;
   image: string;
   price: {
-    main: string;
-    deal: string;
+    main: number;
+    deal: number;
   };
   review: {
-    people: string;
-    stars: string;
+    people: number;
+    stars: number;
   };
 }
