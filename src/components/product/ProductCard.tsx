@@ -15,14 +15,23 @@ export const ProductCard: React.FC<Props> = ({product}) => {
     price: {main, deal},
     review: {stars, people},
   } = product;
+  const dealPercent =
+    main && deal
+      ? Math.round((parseFloat(deal) * 100.0) / parseFloat(main))
+      : 0;
   return (
     <View style={styles.card}>
+      {dealPercent > 0 && (
+        <View style={styles.offBadge}>
+          <Text style={styles.offBadgeText}>{`${dealPercent}`}%</Text>
+        </View>
+      )}
       <View style={styles.details}>
         <RatingBar voteCount={parseInt(people)} rate={parseFloat(stars)} />
         <Text style={styles.title}>{title}</Text>
         <View style={styles.prices}>
-          <Text style={styles.mainPrice}>{main}</Text>
-          <Text style={styles.offPrice}>{deal}</Text>
+          {main && <Text style={styles.mainPrice}>({main})</Text>}
+          {deal && <Text style={styles.offPrice}>({deal})</Text>}
         </View>
       </View>
       <View style={styles.preview}>

@@ -28,6 +28,17 @@ const ProductCardStyle = {
   `,
   mainPrice: tw``,
   offPrice: tw``,
+  offBadge: tw`
+    px-2 py-1
+    absolute -top-3 right-1
+    z-999
+    bg-red-500
+    rounded-full
+  `,
+  offBadgeText: tw`
+    text-white
+    text-xs
+  `,
 };
 
 export default ProductCardStyle;
