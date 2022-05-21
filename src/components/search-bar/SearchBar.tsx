@@ -20,7 +20,9 @@ export const SearchBar: React.FC<Props> = () => {
   );
 
   const onPressSearchHandler = useCallback(() => {
-    navigation.navigate('Search', {query: query});
+    if (query) {
+      navigation.navigate('Search', {query: query});
+    }
   }, [navigation, query]);
 
   return (

@@ -1,9 +1,10 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {SearchScreenRouteProp} from '../types/navigation/search-screen-navigation';
 import {useSearchApi} from '../hooks/useSearchApi';
 import {ProductCard} from '../components/product/ProductCard';
+import {Loading} from '../components/Loading/Loading';
 
 interface Props {}
 
@@ -16,7 +17,7 @@ export const SearchScreen: React.FC<Props> = () => {
     <View>
       <View>
         {!isLoaded ? (
-          <Text>Loading</Text>
+          <Loading />
         ) : (
           <FlatList
             data={data?.products}
