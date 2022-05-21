@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './RatingBar.styles';
 
 interface Props {
@@ -8,6 +8,14 @@ interface Props {
   rate: number;
   size?: number;
 }
+
+const MaterialIcon: React.FC<{
+  style: any;
+  name: string;
+  size: number;
+}> = () => {
+  return <Text>-</Text>;
+};
 
 export const RatingBar: React.FC<Props> = ({voteCount, rate, size = 16}) => {
   const fullStarCount = Math.floor(rate);

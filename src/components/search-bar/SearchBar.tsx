@@ -1,12 +1,21 @@
 import React, {useCallback, useState} from 'react';
-import {TextInput, View} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {MainScreenNavigationProp} from '../../types/navigation/main-screen-navigation';
 import styles from './SearchBar.styles';
 
 interface Props {}
+
+const MaterialIcon: React.FC<{
+  style: any;
+  name: string;
+  size: number;
+  onPress: any;
+}> = () => {
+  return <Text>-</Text>;
+};
 
 export const SearchBar: React.FC<Props> = () => {
   const navigation = useNavigation<MainScreenNavigationProp>();
